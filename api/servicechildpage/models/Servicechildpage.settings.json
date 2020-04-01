@@ -1,0 +1,57 @@
+{
+  "connection": "default",
+  "collectionName": "servicechildpages",
+  "info": {
+    "name": "servicechildpage",
+    "description": "Pages of Child Pages(services)"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "comment": ""
+  },
+  "attributes": {
+    "Name": {
+      "required": true,
+      "type": "string"
+    },
+    "Title": {
+      "required": true,
+      "type": "string"
+    },
+    "Description": {
+      "required": true,
+      "type": "text",
+      "default": ""
+    },
+    "Keyword": {
+      "required": true,
+      "type": "string"
+    },
+    "ParentPage": {
+      "required": true,
+      "enum": [
+        "Full Stack Development",
+        "CMS",
+        "Startup services",
+        "Web Designing(UI)",
+        "Mobile Applications",
+        "Machine Learning/AI",
+        "Learning And Development",
+        "Staff Augmentation",
+        "Managed Services",
+        ""
+      ],
+      "type": "enumeration"
+    },
+    "DisplayInMenu": {
+      "required": true,
+      "default": true,
+      "type": "boolean"
+    },
+    "servicespages": {
+      "collection": "servicespage",
+      "via": "servicechildpage"
+    }
+  }
+}
